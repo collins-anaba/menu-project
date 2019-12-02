@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {Component}from 'react'
 import '../MenuOptions/MenuOptions.css';
+import PropTypes from 'prop-types';
 
 
-const MenuOptions = (props)=> {
-let option = null;
-switch(props.type){
+class MenuOptions extends Component {
+    render () {
+        let option = null;
+switch(this.props.type){
     case ('Bread-bottom'):
         option = <div className='BreadBottom'></div>;
         break;
@@ -32,6 +34,10 @@ switch(props.type){
         option = null;
 }
 return option;
-}
 
+    }
+} 
+MenuOptions.proTypes = {
+    type: PropTypes.string.isRequired
+};
 export default MenuOptions;
